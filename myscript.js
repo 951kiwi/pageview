@@ -1,4 +1,4 @@
 function f(x) {
-    alert x;
+    alert(x);
     
 }
