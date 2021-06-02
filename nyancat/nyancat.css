@@ -1,0 +1,6 @@
+.background-cat{
+    background-image:url(BACKGROUND.gif); /* 画像のURLを指定       */
+    background-size:cover;                 /* 画像のサイズを指定    */
+    width:100%;                              /* 横幅のサイズを指定    */
+    height: 1000px;                            /* 縦幅のサイズを指定    */
+}
