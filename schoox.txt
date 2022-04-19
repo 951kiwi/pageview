@@ -1,0 +1,51 @@
+    <table border="5" bordercolor="green">
+        <tr>
+          <th bgcolor="orangered">○</th>
+          <th bgcolor="orange" width="200">月</th>
+          <th bgcolor="orange" width="200">火</th>
+          <th bgcolor="orange" width="200">水</th>
+          <th bgcolor="orange" width="200">木</th>
+          <th bgcolor="orange" width="200">金</th>
+        </tr>
+        <tr>
+            <th bgcolor="orange" width="50" height="50">1限</td>
+            <td>27</td>
+            <td>27</td>
+            <td>27</td>
+            <td>27</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <th bgcolor="orange" height="50">2限</td>
+             <td>27</td>
+             <td>27</td>
+             <td>27</td>
+             <td>27</td>
+             <td>27</td>
+
+        </tr>
+        <tr>
+            <th bgcolor="orange" height="50">3限</td>
+             <td>27</td>
+             <td>27</td>
+             <td>27</td>
+             <td>27</td>
+             <td>27</td>
+        </tr>
+        <tr>
+            <th bgcolor="orange" height="50">4限</td>
+             <td>27</td>
+             <td>27</td>
+             <td>27</td>
+             <td>27</td>
+             <td>27</td>
+        </tr>
+        <tr>
+            <th bgcolor="orange" height="50">5限</td>
+            <td>27</td>
+            <td>27</td>
+            <td>27</td>
+            <td>27</td>
+            <td>27</td>
+         </tr>
+      </table>
