@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>大阪電気通信大学 前期 履修登録表</title>
+    <link rel="stylesheet" href="school.css">
+</head>
+<body>
+    <table border="5" bordercolor="green">
+        <tr>
+          <th bgcolor="orangered">○</th>
+          <th bgcolor="orange" width="200">月</th>
+          <th bgcolor="orange" width="200">火</th>
+          <th bgcolor="orange" width="200">水</th>
+          <th bgcolor="orange" width="200">木</th>
+          <th bgcolor="orange" width="200">金</th>
+        </tr>
+        <tr>
+            <th bgcolor="orange">1限</td>
+             <td>27</td>
+        </tr>
+        <tr>
+            <th bgcolor="orange" width="50">2限</td>
+             <td>27</td>
+        </tr>
+        <tr>
+            <th bgcolor="orange">3限</td>
+             <td>27</td>
+        </tr>
+        <tr>
+            <th bgcolor="orange">4限</td>
+             <td>27</td>
+        </tr>
+        <tr>
+            <th bgcolor="orange">5限</td>
+            <td>27</td>
+         </tr>
+      </table>
+      <p>in screen size：<span id="ScrSize"></span></p>
+<p>window size：<span id="WinSize"></span></p>
+
+<script type="text/javascript">
+        //画面サイズの取得
+        getScreenSize();
+        //ウィンドウサイズの取得
+        getWindowSize();
+
+        //画面サイズを取得する
+        function getScreenSize() {
+            var s = "横幅 = " + window.parent.screen.width + " / 高さ = " + window.parent.screen.height;
+            document.getElementById("ScrSize").innerHTML = s;
+        }
+
+        //ウィンドウサイズを取得する
+        function getWindowSize() {
+            var sW,sH,s;
+            sW = window.innerWidth;
+            sH = window.innerHeight;
+
+            s = "横幅 = " + sW + " / 高さ = " + sH;
+        
+            document.getElementById("WinSize").innerHTML = s;
+        }
+</script>
+
+    <div class="container">
+        
+    </div>
+</body>
+</html>
