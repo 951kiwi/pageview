@@ -1,0 +1,32 @@
+
+h6#m1 {
+    font-size: 30px;
+    position: relative;
+    overflow: hidden;
+    padding: 0rem 1rem 0rem 130px;
+    border: 2px solid #000;
+  }
+  
+  h6#m1:before {
+    position: absolute;
+    top: -100%;
+    left: -100px;
+    width: 200px;
+    height: 300%;
+    content: '';
+    -webkit-transform: rotate(25deg);
+    transform: rotate(240deg);
+    background: rgb(27, 27, 27);
+  }
+  
+  h6#m1 span {
+    font-size: 35px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: block;
+    padding-top: 0;
+    padding-left: 10px;
+    color: rgb(255, 255, 255);
+  }
