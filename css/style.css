@@ -19,7 +19,7 @@ body{
 	-webkit-text-size-adjust:100%;
 	overflow-x: hidden;
 	color: #000;
-	background: #fff;
+	/* background: #fff; */
 }
 
 a{
@@ -267,16 +267,7 @@ section h2 span {
 }
 
 
-@media only screen and (min-width: 641px){
-	.col2 li{
-		width: 60%;
-		vertical-align: top;
-	}
-	.col2 li:first-child{
-		width: 35%;
-		padding-right: 4%;
-	}
-}
+
 
 @media only screen and (max-width: 640px){
 	.innerS{
@@ -307,7 +298,12 @@ section h2 span {
 }
 
 @media only screen and (max-width: 799px){
+	#white{
+		margin-top: 70px;
+	}
+
 	#header{
+		margin-top: -70px;
 		position: fixed;
 		width: 100%;
 		z-index: 500;
