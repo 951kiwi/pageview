@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+//氏名 : 芝原愛夢 作成日 : 6/17
+
+int main(void) {
+	int myRound(double);
+
+	double a, b, c;
+
+	a = 3.4;
+	b = 5.7;
+	c = 10.7;
+
+	printf("%lfの四捨五入は%d\n", a, myRound(a));
+	printf("%lfの四捨五入は%d\n", b, myRound(b));
+	printf("%lfの四捨五入は%d\n", c, myRound(c));
+
+	return 0;
+}
+
+int myRound(double num) {
+	num = num + 0.5;
+	
+	return int(num);
+}

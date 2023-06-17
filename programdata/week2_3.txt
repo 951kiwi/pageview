@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+
+//氏名 : 芝原愛夢 作成日 : 6/17
+
+int main(void) {
+
+	int a = 0;
+	double b = 0;
+
+	printf("小数を入力してください。");
+	scanf("%lf", &b);
+
+	a = int(b);
+	b = fabs(b - a);
+
+	printf("2.718の整数部分は%dです\n", a);
+	printf("2.718の少数部分は%lfです\n", b);
+
+	return 0;
+}

@@ -1,0 +1,12 @@
+#include <stdio.h>
+// 芝原愛夢 6/17
+
+int main(void) {
+	int a = 1,b = 2;
+	double c;
+	c = double(a) / double(b);
+
+	printf("a/bの結果は%fです。\n", c);
+
+	return 0;
+}

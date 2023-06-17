@@ -1,0 +1,21 @@
+#include <stdio.h>
+// 芝原愛夢 2023/6/17
+
+int main(void) {
+	//char型ではなくint型で宣言 符号なし
+	unsigned int a;
+	//char型ではなくint型で宣言 符号あり
+	signed int b;
+	//桁があふれるのでlong long intで宣言して8 byteメモリを確保する
+	long long int c = 200000000;
+
+	a = 100 + 200;
+	b = 10 - 100;
+	c = c * 20;
+
+	printf("100+200の結果は%dです。\n", a);
+	printf("10-100の結果は%dです。\n", b);
+	printf("200000000の結果は%lldです。\n", c);//%lldでlong long intを出力する
+
+	return 0;
+}
