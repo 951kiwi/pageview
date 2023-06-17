@@ -1,32 +1,32 @@
-const fs = require('fs');
-const path = require('path');
-
-const folderPath = './programdata';
-
-// フォルダ内のファイル一覧を取得
-const files = fs.readdirSync(folderPath);
-
-// テキストファイルのみをフィルタリング
-const textFiles = files.filter(file => path.extname(file).toLowerCase() === '.txt');
-
-// ファイル一覧をJSON形式で保存
-fs.writeFileSync('filelist.json', JSON.stringify(textFiles));
-
-
-
 // フォルダ内のテキストファイル一覧を取得する関数
 function getFileList() {
     // フォルダのパスを指定します（相対パスまたは絶対パス）
-    fetch('filelist.json')
-      .then(response => response.json())
-      .then(data => {
-        var fileListElement = document.getElementById('fileList');
-        data.forEach(file => {
-          var listItem = document.createElement('li');
-          listItem.textContent = file;
-          fileListElement.appendChild(listItem);
+    var folderPath = "/programdata";
+  
+    // XMLHttpRequestオブジェクトを作成します
+    var xhr = new XMLHttpRequest();
+  
+    // フォルダ内のファイル一覧を取得するリクエストを送信します
+    xhr.open("GET", folderPath, true);
+  
+    // レスポンスが返ってきた時の処理
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // フォルダ内のファイル一覧を取得します
+        var fileList = xhr.responseText.split("\n");
+  
+        // ファイル一覧を表示します
+        var fileListElement = document.getElementById("fileList");
+        fileList.forEach(function(file) {
+          if (file.endsWith(".txt")) {
+            var listItem = document.createElement("li");
+            listItem.textContent = file;
+            fileListElement.appendChild(listItem);
+          }
         });
-      })
-      .catch(error => console.error('Error:', error));
-
+      }
+    };
+  
+    // リクエストを送信します
+    xhr.send();
   }
