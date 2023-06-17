@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+
+
+#customFont {
+    font-family: 'Sawarabi Mincho', sans-serif;
+    color: gray;
+    font-weight: bold;
+  }
+
+#custom2 {
+
+font-weight: bold;
+position: relative;
+padding: 6px;
+color: #fff;
+border-radius: 10px;
+background-image: -webkit-linear-gradient(315deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
+background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
+}
+
+#custom2 span {
+display: block;
+padding: 1rem 2rem;
+border-radius: 4px;
+background: rgba(255, 255, 255, .2);
+}
+ul, ol {
+    background: #fffde8;
+    box-shadow: 0px 0px 0px 10px #fffde8;/*線の外側*/
+    border: dashed 2px #ffb03f;/*破線*/
+    border-radius: 9px;
+    margin-left: 10px;/*はみ出ないように調整*/
+    margin-right: 10px;/*はみ出ないように調整*/
+    padding: 0.5em 0.5em 0.5em 2em;
+  }
+  
+  ul li, ol li {
+    line-height: 1.5;
+    padding: 0.5em 0;
+  }
+
+
+
+
+
+
+
+  body {
+    background-color: #E0FFFF;
+  }
+
+
+  
+  
+  h3 {
+    /* margin: 20px; */
+    text-align: center;
+    font-family: "Paytone One";
+    color: #202020;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+  }
+  
+  h3 span {
+    display: block;
+    margin: 11px 0 17px 0;
+    font-size: 80px;
+    line-height: 80px;
+    color: #00FA9A;
+    text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #F0FFF0;
+    letter-spacing: -4px;
+  }
