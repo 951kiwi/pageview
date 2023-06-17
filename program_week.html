@@ -8,6 +8,7 @@
         <meta property="og:url" content="https://www.951kiwi.com/">
         <meta property="og:image" content="https://www.951kiwi.com/%E7%94%BB%E5%83%8F/icon.png">
         <meta property="og:description" content="キウイフルーツの森">
+        <script src="program_week.js"></script>
         <!--<meta charset="utf-8">-->
         <title>951kiwi</title>
         <!-- Compiled and minified CSS -->
@@ -17,6 +18,15 @@
     <body>
         <div class="container">
             <h1>951kiwi</h1>
+            <Report>
+                <Folder>\Report</Folder>
+              </Report>
+              <h6>フォルダ内のテキストファイル一覧</h6>
+                <ul id="fileList"></ul>
+              <script>
+                // ページが読み込まれた時にファイル一覧を取得します
+                window.onload = getFileList;
+              </script>
             <object data="test.txt" type="text/plain"></object>
             <h2 class="red">ホーム画面</h2>
             <a class="btn" href="discord.951kiwi.css">Discord.css</a>
