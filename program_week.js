@@ -1,7 +1,7 @@
 // フォルダ内のテキストファイル一覧を取得する関数
 function getFileList() {
     // フォルダのパスを指定します（相対パスまたは絶対パス）
-    var folderPath = "programdata/";
+    var folderPath = "programdata";
   
     // XMLHttpRequestオブジェクトを作成します
     var xhr = new XMLHttpRequest();
