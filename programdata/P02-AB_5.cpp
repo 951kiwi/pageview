@@ -3,25 +3,25 @@
 void hyoutei(int);
 int main(void) {
 	int ten;
-	/*ÅÀ¿ô¤ÎÆþÎÏ*/
-	printf("ÅÀ¿ô¤Ï? > ");
+	/*ç‚¹æ•°ã®å…¥åŠ›*/
+	printf("ç‚¹æ•°ã¯? > ");
 	scanf("%d", &ten);
 	hyoutei(ten);
 }
 
 void hyoutei(int i) {
 	
-	/*È½Äê*/
+	/*åˆ¤å®š*/
 	if (i < 60)
-		printf("ÉÔ²Ä");
+		printf("ä¸å¯");
 	else {
 		if (i < 70)
-			printf(" ²Ä\n");
+			printf(" å¯\n");
 		else {
 			if (i < 90)
-				printf(" ÎÉ\n");
+				printf(" è‰¯\n");
 			else
-				printf(" Í¥\n");
+				printf(" å„ª\n");
 		}
 	}
 }
