@@ -39,9 +39,33 @@ ul, ol {
     padding: 0.5em 0;
   }
 
+  .rep{
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    border-radius: 20%;
+    background: skyblue;
+    text-align: center;
+  }
+  .rep::after{
+    color: white;
+    content: "修正";
+    text-align: center;
+  }
 
-
-
+  .new{
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    border-radius: 20%;
+    background: rgb(247, 82, 82);
+    text-align: center;
+  }
+  .new::after{
+    color: white;
+    content: "new";
+    text-align: center;
+  }
 
 
 
@@ -59,6 +83,7 @@ ul, ol {
     color: #202020;
     text-transform: uppercase;
     letter-spacing: -2px;
+    
   }
   
   h3 span {
