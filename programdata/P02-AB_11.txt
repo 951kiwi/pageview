@@ -1,0 +1,24 @@
+#include<iostream>　//入出力
+#include <time.h> //時間
+
+using std::cout;
+using std::endl;
+
+
+int fibo(int N)
+{
+	if (N == 0) return 0;
+	else if (N == 1) return 0;
+	else if (N == 2)return 1;
+	return fibo(N - 1) + fibo(N - 2) + fibo(N - 3);
+}
+
+int main() {
+	long cpu_time;
+	double sec;
+	cout << fibo(35) << endl;
+	cpu_time = clock(); //開始時間
+	sec = (double)cpu_time / CLOCKS_PER_SEC; //cpu動作時間[i] / クロック毎秒
+	cout << "実行時間:" << sec << "秒" << endl;
+	return 0;
+}

@@ -14,8 +14,8 @@ position: relative;
 padding: 6px;
 color: #fff;
 border-radius: 10px;
-background-image: -webkit-linear-gradient(315deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
-background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
+background-image: -webkit-linear-gradient(315deg, #3c2a7c 0%, #502e75 29%);
+background-image: linear-gradient(-225deg, #b261a0 0%, #511393 59%);
 }
 
 #custom2 span {

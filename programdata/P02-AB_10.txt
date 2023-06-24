@@ -2,10 +2,10 @@
 int main(void) {
 	int age, sex, heizon, kokyuu, sanso, GCS, nyouso, CRP;
 	double sibou = 0;
-	printf("”N—î‚Í?");
+	printf("å¹´é½¢ã¯?");
 	scanf_s("%d", &age);
 	while (age < 0 || age>117) {
-		printf("0ˆÈã117ˆÈ‰º‚Ì”N—î‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+		printf("0ä»¥ä¸Š117ä»¥ä¸‹ã®å¹´é½¢ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 		scanf_s("%d", &age);
 	}
 	if (50 <= age && age <= 59) {
@@ -20,19 +20,19 @@ int main(void) {
 	else if (age >= 80) {
 		sibou = sibou + 7;
 	}
-	printf("«•Ê‚Í?(’j:0—:1)");
+	printf("æ€§åˆ¥ã¯?(ç”·:0å¥³:1)");
 	scanf_s("%d", &sex);
 	while (!(sex == 0 || sex == 1)) {
-		printf("0(’j)‚©1(—)‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+		printf("0(ç”·)ã‹1(å¥³)ã§å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 		scanf_s("%d", &sex);
 	}
 	if (sex == 0) {
 		sibou = sibou + 1;
 	}
-	printf("•À‘¶¾Š³”‚Í?");
+	printf("ä¸¦å­˜ç–¾æ‚£æ•°ã¯?");
 	scanf_s("%d", &heizon);
 	while (0 > heizon) {
-		printf("0ˆÈã‚Ì•À‘¶¾Š³”‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+		printf("0ä»¥ä¸Šã®ä¸¦å­˜ç–¾æ‚£æ•°ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 		scanf_s("%d", &heizon);
 	}
 	if (heizon == 1) {
@@ -41,10 +41,10 @@ int main(void) {
 	else if (heizon >= 2) {
 		sibou = sibou + 2;
 	}
-	printf("ŒÄ‹z”‚Í?");
+	printf("å‘¼å¸æ•°ã¯?");
 	scanf_s("%d", &kokyuu);
 	while (0 > kokyuu) {
-		printf("0ˆÈã‚ÌŒÄ‹z”‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+		printf("0ä»¥ä¸Šã®å‘¼å¸æ•°ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 		scanf_s("%d", &kokyuu);
 	}
 	if (20 <= kokyuu && kokyuu <= 29) {
@@ -53,28 +53,28 @@ int main(void) {
 	else if (kokyuu >= 30) {
 		sibou = sibou + 2;
 	}
-	printf("_‘f–O˜a“x‚Í?");
+	printf("é…¸ç´ é£½å’Œåº¦ã¯?");
 	scanf_s("%d", &sanso);
 	while (0 > sanso || 100 < sanso) {
-		printf("0ˆÈã100ˆÈ‰º‚Ì_‘f–O˜a“x‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+		printf("0ä»¥ä¸Š100ä»¥ä¸‹ã®é…¸ç´ é£½å’Œåº¦ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 		scanf_s("%d", &sanso);
 	}
 	if (sanso < 92) {
 		sibou = sibou + 2;
 	}
-	printf("GCS‚Í?");
+	printf("GCSã¯?");
 	scanf_s("%d", &GCS);
 	while (3 > GCS || 15 < GCS) {
-		printf("3ˆÈã15ˆÈ‰º‚ÌGCS‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+		printf("3ä»¥ä¸Š15ä»¥ä¸‹ã®GCSã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 		scanf_s("%d", &GCS);
 	}
 	if (GCS < 15) {
 		sibou = sibou + 2;
 	}
-	printf("”A‘f‚Í?");
+	printf("å°¿ç´ ã¯?");
 	scanf_s("%d", &nyouso);
 	while (0 > nyouso) {
-		printf("0ˆÈã‚Ì”A‘f‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+		printf("0ä»¥ä¸Šã®å°¿ç´ ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 		scanf_s("%d", &nyouso);
 	}
 	if (7 <= nyouso && nyouso <= 14) {
@@ -83,10 +83,10 @@ int main(void) {
 	else if (nyouso > 14) {
 		sibou = sibou + 3;
 	}
-	printf("CRP‚Í?");
+	printf("CRPã¯?");
 	scanf_s("%d", &CRP);
 	while (0 > CRP) {
-		printf("0ˆÈã‚ÌCRP‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+		printf("0ä»¥ä¸Šã®CRPã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 		scanf_s("%d", &CRP);
 	}
 	if (50 <= CRP && CRP <= 99) {
@@ -95,6 +95,6 @@ int main(void) {
 	else if (CRP >= 100) {
 		sibou = sibou + 2;
 	}
-	printf("€–SƒXƒRƒA=%lf", sibou);
+	printf("æ­»äº¡ã‚¹ã‚³ã‚¢=%lf", sibou);
 	return 0;
 }

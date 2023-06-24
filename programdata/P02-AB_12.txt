@@ -1,0 +1,26 @@
+#include<iostream>
+#include <time.h>
+#include<vector>
+using std::cout;
+using std::endl;
+std::vector<long long> memo;
+long long fibo(int N) {
+	if (N == 0) return 0;
+	else if (N == 1) return 0;
+	else if (N == 2)return 1;
+	if (memo[N] != -1) return memo[N];
+	return memo[N] = fibo(N - 1) + fibo(N - 2) + fibo(N - 3);//順番にmemoに数字を入れる
+}
+int main() {
+	long cpu_time;
+	double sec;
+	memo.assign(36, -1);//memoの配列の割当（全てに-1を入れる）
+	fibo(35);
+	for (int N = 3; N < 36; ++N) {
+		cout << N << "項目: " << memo[N] << endl;
+	}
+	cpu_time = clock();
+	sec = (double)cpu_time / CLOCKS_PER_SEC;
+	printf("%f秒\n", sec);
+	return 0;
+}

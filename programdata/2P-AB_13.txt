@@ -1,0 +1,35 @@
+#include <iostream>
+#include <time.h>
+
+
+long long memo[20];
+long long kaizyou(int);
+long long kaizyou_memo(int);
+
+//メモ化する意味があまりないので時間にほとんどの差がない
+int main(void) {
+	long cpu_time,cpu_time2;
+	double sec;
+	
+	std::cout << "階乗(非メモ)=" << kaizyou(20) << std::endl;
+	cpu_time = clock();
+	sec = (double)cpu_time / CLOCKS_PER_SEC;
+	printf("%f秒\n", sec);
+	for (int i = 0; i < 20; i++) {
+		memo[i] = -1;
+	}
+
+	std::cout << "階乗(メモ)=" << kaizyou_memo(20) << std::endl;
+	cpu_time2 = clock();
+	sec = ((double)cpu_time2 - (double)cpu_time) / CLOCKS_PER_SEC;
+	printf("%f秒\n", sec);
+}
+long long kaizyou(int num) {
+	if (num == 0) return 1;
+	return num * (kaizyou(num - 1));
+}
+long long kaizyou_memo(int num) {
+	if (num == 0) return 1;
+	if (memo[num-1] != -1) return memo[num-1];
+	return memo[num] = num * kaizyou_memo(num-1);
+}
