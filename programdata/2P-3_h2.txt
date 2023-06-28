@@ -1,0 +1,23 @@
+#include <stdio.h>
+typedef struct studentTest
+{
+	char name[20];
+	int math;
+	int science;
+	int history;
+	int japanese;
+	int english;
+}studentTest;
+
+int main(void) {
+	studentTest class1[3] = {
+		{"Osaka Taro",75,82,90,80,60},
+		{"Neyagawa Hanako",90,95,98,83,92},
+		{"Dentsu Jiro",40,48,55,49,60}
+	};
+	printf("     名前        数学 理科 社会 国語 英語\n");
+	for (int i = 0; i < 3; i++) {
+		printf("%15s %4d %4d %4d %4d %4d\n", class1[i].name, class1[i].math, class1[i].science, class1[i].history, 
+			class1[i].japanese, class1[i].english);
+	}
+}

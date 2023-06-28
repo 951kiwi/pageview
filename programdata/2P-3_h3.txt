@@ -1,0 +1,64 @@
+#include <stdio.h>
+typedef struct studentTest
+{
+	char name[20];
+	int math;
+	int science;
+	int history;
+	int japanese;
+	int english;
+}studentTest;
+double Average_Math(studentTest*);
+double Average_History(studentTest*);
+double Average_Science(studentTest*);
+double Average_Japanese(studentTest*);
+double Average_English(studentTest*);
+
+int main(void) {
+	studentTest class1[3] = {
+		{"Osaka Taro",75,82,90,80,60},
+		{"Neyagawa Hanako",90,95,98,83,92},
+		{"Dentsu Hiro",40,48,55,49,60}
+	};
+	printf("数学の平均点 = %f\n", Average_Math(class1));
+	printf("理科の平均点 = %f\n", Average_Science(class1));
+	printf("社会の平均点 = %f\n", Average_History(class1));
+	printf("国語の平均点 = %f\n", Average_Japanese(class1));
+	printf("英語の平均点 = %f\n", Average_English(class1));
+}
+
+double Average_Math(studentTest *test) {
+	int data = 0;
+	for (int i = 0; i < 3; i++) {
+		data += test[i].math;
+	}
+	return double(data) / 3.0;
+}
+double Average_History(studentTest* test) {
+	int data = 0;
+	for (int i = 0; i < 3; i++) {
+		data += test[i].history;
+	}
+	return double(data) / 3.0;
+}
+double Average_Science(studentTest* test) {
+	int data = 0;
+	for (int i = 0; i < 3; i++) {
+		data += test[i].science;
+	}
+	return double(data) / 3.0;
+}
+double Average_Japanese(studentTest* test) {
+	int data = 0;
+	for (int i = 0; i < 3; i++) {
+		data += test[i].japanese;
+	}
+	return double(data) / 3.0;
+}
+double Average_English(studentTest* test) {
+	int data = 0;
+	for (int i = 0; i < 3; i++) {
+		data += test[i].english;
+	}
+	return double(data) / 3.0;
+}

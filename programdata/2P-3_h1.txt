@@ -1,0 +1,35 @@
+#include <stdio.h>
+struct studentTest
+{
+	char name[20];
+	int math;
+	int science;
+	int history;
+	int japanese;
+	int english;
+};
+
+int main(void) {
+	struct  studentTest student1;
+	struct  studentTest student2;
+	struct  studentTest student3;
+	student1.math = 75;
+	student2.math = 90;
+	student3.math = 40;
+	student1.science = 82;
+	student2.science = 95;
+	student3.science = 48;
+	student1.history = 90;
+	student2.history = 98;
+	student3.history = 55;
+	student1.japanese = 80;
+	student2.japanese = 83;
+	student3.japanese = 49;
+	student1.english = 60;
+	student2.english = 92;
+	student3.english = 60;
+	printf("–¼‘O   ”Šw —‰È Ğ‰ï ‘Œê ‰pŒê\n");
+	printf("¶“k1 %4d %4d %4d %4d %4d\n", student1.math, student1.science, student1.history, student1.japanese, student1.english);
+	printf("¶“k2 %4d %4d %4d %4d %4d\n", student2.math, student2.science, student2.history, student2.japanese, student2.english);
+	printf("¶“k3 %4d %4d %4d %4d %4d\n", student3.math, student3.science, student3.history, student3.japanese, student3.english);
+}

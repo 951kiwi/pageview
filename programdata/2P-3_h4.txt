@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct studentTest
+{
+	char name[20];
+	int math;
+	int science;
+	int history;
+	int japanese;
+	int english;
+}studentTest;
+
+int main(void) {
+	int studentnum;
+	printf("生徒の人数?: ");
+	scanf("%d", &studentnum);
+	studentTest* class1;
+
+	class1 = (studentTest*)malloc(studentnum * sizeof(studentTest));
+	if (class1 == NULL) {
+		printf("cannot malloc\n");
+		return -1;
+	}
+	free(class1);
+
+	for (int i = 0; i < studentnum; i++) {
+		printf("[%d人目]名前を入れてください>>", i + 1);
+		scanf("%s", &class1[i].name);
+		printf("[%d人目]数学の点数>>", i + 1);
+		scanf("%d", &class1[i].math);
+		printf("[%d人目]理科の点数>>", i + 1);
+		scanf("%d", &class1[i].science);
+		printf("[%d人目]社会の点数>>", i + 1);
+		scanf("%d", &class1[i].history);
+		printf("[%d人目]国語の点数>>", i + 1);
+		scanf("%d", &class1[i].japanese);
+		printf("[%d人目]英語の点数>>", i + 1);
+		scanf("%d", &class1[i].english);
+	}
+
+	printf("     名前        数学 理科 社会 国語 英語\n");
+	for (int i = 0; i < studentnum; i++) {
+		printf("%15s %4d %4d %4d %4d %4d\n", class1[i].name, class1[i].math, class1[i].science, class1[i].history,
+			class1[i].japanese, class1[i].english);
+	}
+
+
+
+
+	
+	return 0;
+}
