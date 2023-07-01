@@ -1,0 +1,20 @@
+#include <stdio.h>
+typedef struct studentTest
+{
+	char name[20];	//名前
+	double BA;		//打率
+	int HR;			//ホームラン
+	int SB;			//盗塁
+}studentTest;
+
+int main(void) {
+	studentTest class1[3] = {
+		{"Ichiro",0.351,10,30},
+		{"Jiro",0.284,45,10},
+		{"Saburo",0.252,30,3}
+	};
+	printf("     名前           打率    ホームラン数 盗塁数\n");
+	for (int i = 0; i < 3; i++) {
+		printf("%15s %4f %10d %10d\n", class1[i].name,class1[i].BA, class1[i].HR, class1[i].SB);
+	}
+}

@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+typedef struct studentTest
+{
+	int ID;			//ID
+	char name[20];	//名前
+	double BA;		//打率
+	int HR;			//ホームラン
+	int SB;			//盗塁
+}studentTest;
+
+
+int main(void) {
+	int studentnum = 4;
+	studentTest* class1;
+	class1 = (studentTest*)malloc(studentnum * sizeof(studentTest));
+	class1[0].ID = 1;
+	strcpy(class1[0].name, "Ichiro");
+	class1[0].BA = 0.351;
+	class1[0].HR = 10;
+	class1[0].SB = 30;
+
+	class1[1].ID = 2;
+	strcpy(class1[1].name, "Jiro");
+	class1[1].BA = 0.284;
+	class1[1].HR = 45;
+	class1[1].SB = 30;
+	class1[2].ID = 3;
+	strcpy(class1[2].name, "Saburo");
+	class1[2].BA = 0.252;
+	class1[2].HR = 30;
+	class1[2].SB = 3;
+	class1[3].ID = 4;
+	strcpy(class1[3].name, "shiro");
+	class1[3].BA = 0.321;
+	class1[3].HR = 25;
+	class1[3].SB = 15;
+
+	printf("ID      名前           打率    ホームラン数 盗塁数\n");
+	for (int i = 0; i < studentnum; i++) {
+		printf("%3d %15s %4f %10d %10d\n", class1[i].ID, class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
+	}
+	printf("削除する選手のIDを入力して下さい。　>>");
+	int repair;
+	scanf("%d", &repair);
+	for (int i = 0; i < studentnum-1; i++) {
+		if (class1[i].ID >= repair) {
+			class1[i].ID = i+1;
+			strcpy(class1[i].name,class1[i + 1].name);
+			class1[i].BA = class1[i + 1].BA;
+			class1[i].HR = class1[i + 1].HR;
+			class1[i].SB = class1[i + 1].SB;
+
+		}
+	}
+	studentnum = studentnum - 1;
+	
+	printf("ID      名前           打率    ホームラン数 盗塁数\n");
+	for (int i = 0; i < studentnum; i++) {
+		printf("%3d %15s %4f %10d %10d\n", class1[i].ID, class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
+	}
+
+}

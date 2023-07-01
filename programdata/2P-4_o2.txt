@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct studentTest
+{
+	int ID;			//ID
+	char name[20];	//名前
+	double BA;		//打率
+	int HR;			//ホームラン
+	int SB;			//盗塁
+}studentTest;
+
+
+int main(void) {
+	int studentnum;
+	printf("登録者数>>");
+	scanf("%d", &studentnum);
+	studentTest* class1;
+	class1 = (studentTest*)malloc(studentnum * sizeof(studentTest));
+
+	for (int i = 0; i < studentnum; i++) {
+		class1[i].ID = i + 1;
+		printf("[%d人目]名前 >> ", i + 1);
+		scanf("%s", &class1[i].name);
+		printf("[%d人目]打率 >> ", i + 1);
+		scanf("%lf", &class1[i].BA);
+		printf("[%d人目]ホームラン数 >> ", i + 1);
+		scanf("%d", &class1[i].HR);
+		printf("[%d人目]盗塁 >> ", i + 1);
+		scanf("%d", &class1[i].SB);
+	}
+
+	printf("ID      名前           打率    ホームラン数 盗塁数\n");
+	for (int i = 0; i < studentnum; i++) {
+		printf("%3d %15s %4f %10d %10d\n",class1[i].ID, class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
+	}
+	printf("変更する選手のIDを入力して下さい。　>>");
+	int repair;
+	scanf("%d", &repair);
+	for (int i = 0; i < studentnum; i++) {
+		if (class1[i].ID == repair) {
+			printf("変更するデータは%s,%f,%d,%d\n", class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
+			printf("変更後の名前 >> ");
+			scanf("%s", &class1[i].name);
+			printf("変更後の打率 >> ");
+			scanf("%lf", &class1[i].BA);
+			printf("変更後のホームラン数 >> ");
+			scanf("%d", &class1[i].HR);
+			printf("変更後の盗塁 >> ");
+			scanf("%d", &class1[i].SB);
+			printf("変更後のデータは%s,%f,%d,%d\n", class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
+			break;
+		}
+	}
+	printf("ID      名前           打率    ホームラン数 盗塁数\n");
+	for (int i = 0; i < studentnum; i++) {
+		printf("%3d %15s %4f %10d %10d\n", class1[i].ID, class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
+	}
+
+}

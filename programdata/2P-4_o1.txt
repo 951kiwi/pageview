@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct studentTest
+{
+	char name[20];	//名前
+	double BA;		//打率
+	int HR;			//ホームラン
+	int SB;			//盗塁
+}studentTest;
+void MAX_HR(studentTest*, int);
+
+
+int main(void) {
+	int studentnum;
+	printf("登録者数>>");
+	scanf("%d", &studentnum);
+	studentTest* class1;
+	class1 = (studentTest*)malloc(studentnum * sizeof(studentTest));
+
+	for (int i = 0; i < studentnum; i++) {
+		printf("[%d人目]名前 >> ", i + 1);
+		scanf("%s", &class1[i].name);
+		printf("[%d人目]打率 >> ", i + 1);
+		scanf("%lf", &class1[i].BA);
+		printf("[%d人目]ホームラン数 >> ", i + 1);
+		scanf("%d", &class1[i].HR);
+		printf("[%d人目]盗塁 >> ", i + 1);
+		scanf("%d", &class1[i].SB);
+	}
+
+	printf("     名前           打率    ホームラン数 盗塁数\n");
+	for (int i = 0; i < studentnum; i++) {
+		printf("%15s %4f %10d %10d\n", class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
+	}
+	MAX_HR(class1, studentnum);
+
+}
+
+void MAX_HR(studentTest* class1, int studentnum) {
+	int maxplayer,maxdata = 0;
+	for (int i = 0; i < studentnum; i++) {
+		if (class1[i].HR > maxdata) {
+			maxdata = class1[i].HR;
+			maxplayer = i;
+		}
+	}
+	printf("\n\nHR数が最大の選手は[%s]選手です。\n", class1[maxplayer].name);
+	printf("HR数は[%d回]です", maxdata);
+}
