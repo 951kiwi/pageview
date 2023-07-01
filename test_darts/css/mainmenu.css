@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "めもわーる";
+    src: url(../font/memoir-round.otf);
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+}
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+}
+
+.left{
+    display: inline-block;
+    margin: -2.5px;
+}
+.menubox {
+    background: linear-gradient(to right, transparent 10%, #A7ACB5D9 10%, #A7ACB5D9 90%, transparent 10%);
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    position: fixed;
+    bottom: 10%;
+    box-sizing:border-box;
+}
+.StartButton{
+    width: 100%;
+    font-family: "めもわーる";
+    font-size: 500%;
+    -webkit-text-stroke: 2px #FFF;
+    text-align: center;
+    position: fixed;
+    bottom: 30%;
+}
+.menu_icon{
+    height: 100%;
+    box-sizing:border-box;
+    padding: 8px;
+}
+.menubox1{
+    width:25%;
+    height:100% ;
+    box-sizing: border-box;
+}
+#backgraund{
+    background-image: url("../image/backgraund.png");
+    background-position: left bottom;
+	background-repeat: no-repeat;
+    background-size: cover;
+}
