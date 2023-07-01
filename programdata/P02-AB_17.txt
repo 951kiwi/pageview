@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(void) {
+	int c=1;
+	char fname[255] = "P02-AB_17.cpp";//ここでファイル名指定
+	FILE* fp;
+	errno_t error;
+	error = fopen_s(&fp, fname, "r");
+	if (error != 0) {
+		printf("ファイルを開けませんでした", fname);
+		exit(1);
+	}
+	char data[500];
+	while (fgets(data,500,fp) != NULL) {//EOF = 処理の終了検出
+		printf("%3d: %s", c, data);
+		c++;
+	}
+	fclose(fp);
+	return 0;
+}

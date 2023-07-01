@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(void) {
+	int c;
+	char fname[255] = "P02-AB_16.cpp";//ここでファイル名指定
+	FILE* fp;
+	int count = 0;
+	errno_t error;
+	error = fopen_s(&fp, fname, "r");
+	if (error != 0) {
+		printf("ファイルを開けませんでした", fname);
+		exit(1);
+	}
+	while ((c = fgetc(fp)) != EOF) {//EOF = 処理の終了検出
+		count++;
+	}
+	printf("ファイルの文字数は : %d", count);
+	fclose(fp);
+	return 0;
+}
