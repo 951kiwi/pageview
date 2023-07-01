@@ -28,8 +28,8 @@ int main(void) {
 	student1.english = 60;
 	student2.english = 92;
 	student3.english = 60;
-	printf("–¼‘O   ”Šw —‰È Ğ‰ï ‘Œê ‰pŒê\n");
-	printf("¶“k1 %4d %4d %4d %4d %4d\n", student1.math, student1.science, student1.history, student1.japanese, student1.english);
-	printf("¶“k2 %4d %4d %4d %4d %4d\n", student2.math, student2.science, student2.history, student2.japanese, student2.english);
-	printf("¶“k3 %4d %4d %4d %4d %4d\n", student3.math, student3.science, student3.history, student3.japanese, student3.english);
+	printf("åå‰   æ•°å­¦ ç†ç§‘ ç¤¾ä¼š å›½èª è‹±èª\n");
+	printf("ç”Ÿå¾’1 %4d %4d %4d %4d %4d\n", student1.math, student1.science, student1.history, student1.japanese, student1.english);
+	printf("ç”Ÿå¾’2 %4d %4d %4d %4d %4d\n", student2.math, student2.science, student2.history, student2.japanese, student2.english);
+	printf("ç”Ÿå¾’3 %4d %4d %4d %4d %4d\n", student3.math, student3.science, student3.history, student3.japanese, student3.english);
 }
