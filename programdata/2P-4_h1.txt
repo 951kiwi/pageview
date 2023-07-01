@@ -1,10 +1,10 @@
 #include <stdio.h>
 typedef struct studentTest
 {
-	char name[20];	//–¼‘O
-	double BA;		//‘Å—¦
-	int HR;			//ƒz[ƒ€ƒ‰ƒ“
-	int SB;			//“—Û
+	char name[20];	//åå‰
+	double BA;		//æ‰“ç‡
+	int HR;			//ãƒ›ãƒ¼ãƒ ãƒ©ãƒ³
+	int SB;			//ç›—å¡
 }studentTest;
 
 int main(void) {
@@ -13,7 +13,7 @@ int main(void) {
 		{"Jiro",0.284,45,10},
 		{"Saburo",0.252,30,3}
 	};
-	printf("     –¼‘O           ‘Å—¦    ƒz[ƒ€ƒ‰ƒ“” “—Û”\n");
+	printf("     åå‰           æ‰“ç‡    ãƒ›ãƒ¼ãƒ ãƒ©ãƒ³æ•° ç›—å¡æ•°\n");
 	for (int i = 0; i < 3; i++) {
 		printf("%15s %4f %10d %10d\n", class1[i].name,class1[i].BA, class1[i].HR, class1[i].SB);
 	}

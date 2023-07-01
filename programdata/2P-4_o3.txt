@@ -4,10 +4,10 @@
 typedef struct studentTest
 {
 	int ID;			//ID
-	char name[20];	//–¼‘O
-	double BA;		//‘Å—¦
-	int HR;			//ƒz[ƒ€ƒ‰ƒ“
-	int SB;			//“—Û
+	char name[20];	//åå‰
+	double BA;		//æ‰“ç‡
+	int HR;			//ãƒ›ãƒ¼ãƒ ãƒ©ãƒ³
+	int SB;			//ç›—å¡
 }studentTest;
 
 
@@ -37,11 +37,11 @@ int main(void) {
 	class1[3].HR = 25;
 	class1[3].SB = 15;
 
-	printf("ID      –¼‘O           ‘Å—¦    ƒz[ƒ€ƒ‰ƒ“” “—Û”\n");
+	printf("ID      åå‰           æ‰“ç‡    ãƒ›ãƒ¼ãƒ ãƒ©ãƒ³æ•° ç›—å¡æ•°\n");
 	for (int i = 0; i < studentnum; i++) {
 		printf("%3d %15s %4f %10d %10d\n", class1[i].ID, class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
 	}
-	printf("íœ‚·‚é‘Iè‚ÌID‚ğ“ü—Í‚µ‚Ä‰º‚³‚¢B@>>");
+	printf("å‰Šé™¤ã™ã‚‹é¸æ‰‹ã®IDã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„ã€‚ã€€>>");
 	int repair;
 	scanf("%d", &repair);
 	for (int i = 0; i < studentnum-1; i++) {
@@ -56,7 +56,7 @@ int main(void) {
 	}
 	studentnum = studentnum - 1;
 	
-	printf("ID      –¼‘O           ‘Å—¦    ƒz[ƒ€ƒ‰ƒ“” “—Û”\n");
+	printf("ID      åå‰           æ‰“ç‡    ãƒ›ãƒ¼ãƒ ãƒ©ãƒ³æ•° ç›—å¡æ•°\n");
 	for (int i = 0; i < studentnum; i++) {
 		printf("%3d %15s %4f %10d %10d\n", class1[i].ID, class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
 	}

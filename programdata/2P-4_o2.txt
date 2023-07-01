@@ -3,55 +3,55 @@
 typedef struct studentTest
 {
 	int ID;			//ID
-	char name[20];	//–¼‘O
-	double BA;		//‘Å—¦
-	int HR;			//ƒz[ƒ€ƒ‰ƒ“
-	int SB;			//“—Û
+	char name[20];	//åå‰
+	double BA;		//æ‰“ç‡
+	int HR;			//ãƒ›ãƒ¼ãƒ ãƒ©ãƒ³
+	int SB;			//ç›—å¡
 }studentTest;
 
 
 int main(void) {
 	int studentnum;
-	printf("“o˜^Ò”>>");
+	printf("ç™»éŒ²è€…æ•°>>");
 	scanf("%d", &studentnum);
 	studentTest* class1;
 	class1 = (studentTest*)malloc(studentnum * sizeof(studentTest));
 
 	for (int i = 0; i < studentnum; i++) {
 		class1[i].ID = i + 1;
-		printf("[%dl–Ú]–¼‘O >> ", i + 1);
+		printf("[%däººç›®]åå‰ >> ", i + 1);
 		scanf("%s", &class1[i].name);
-		printf("[%dl–Ú]‘Å—¦ >> ", i + 1);
+		printf("[%däººç›®]æ‰“ç‡ >> ", i + 1);
 		scanf("%lf", &class1[i].BA);
-		printf("[%dl–Ú]ƒz[ƒ€ƒ‰ƒ“” >> ", i + 1);
+		printf("[%däººç›®]ãƒ›ãƒ¼ãƒ ãƒ©ãƒ³æ•° >> ", i + 1);
 		scanf("%d", &class1[i].HR);
-		printf("[%dl–Ú]“—Û >> ", i + 1);
+		printf("[%däººç›®]ç›—å¡ >> ", i + 1);
 		scanf("%d", &class1[i].SB);
 	}
 
-	printf("ID      –¼‘O           ‘Å—¦    ƒz[ƒ€ƒ‰ƒ“” “—Û”\n");
+	printf("ID      åå‰           æ‰“ç‡    ãƒ›ãƒ¼ãƒ ãƒ©ãƒ³æ•° ç›—å¡æ•°\n");
 	for (int i = 0; i < studentnum; i++) {
 		printf("%3d %15s %4f %10d %10d\n",class1[i].ID, class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
 	}
-	printf("•ÏX‚·‚é‘Iè‚ÌID‚ğ“ü—Í‚µ‚Ä‰º‚³‚¢B@>>");
+	printf("å¤‰æ›´ã™ã‚‹é¸æ‰‹ã®IDã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„ã€‚ã€€>>");
 	int repair;
 	scanf("%d", &repair);
 	for (int i = 0; i < studentnum; i++) {
 		if (class1[i].ID == repair) {
-			printf("•ÏX‚·‚éƒf[ƒ^‚Í%s,%f,%d,%d\n", class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
-			printf("•ÏXŒã‚Ì–¼‘O >> ");
+			printf("å¤‰æ›´ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã¯%s,%f,%d,%d\n", class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
+			printf("å¤‰æ›´å¾Œã®åå‰ >> ");
 			scanf("%s", &class1[i].name);
-			printf("•ÏXŒã‚Ì‘Å—¦ >> ");
+			printf("å¤‰æ›´å¾Œã®æ‰“ç‡ >> ");
 			scanf("%lf", &class1[i].BA);
-			printf("•ÏXŒã‚Ìƒz[ƒ€ƒ‰ƒ“” >> ");
+			printf("å¤‰æ›´å¾Œã®ãƒ›ãƒ¼ãƒ ãƒ©ãƒ³æ•° >> ");
 			scanf("%d", &class1[i].HR);
-			printf("•ÏXŒã‚Ì“—Û >> ");
+			printf("å¤‰æ›´å¾Œã®ç›—å¡ >> ");
 			scanf("%d", &class1[i].SB);
-			printf("•ÏXŒã‚Ìƒf[ƒ^‚Í%s,%f,%d,%d\n", class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
+			printf("å¤‰æ›´å¾Œã®ãƒ‡ãƒ¼ã‚¿ã¯%s,%f,%d,%d\n", class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
 			break;
 		}
 	}
-	printf("ID      –¼‘O           ‘Å—¦    ƒz[ƒ€ƒ‰ƒ“” “—Û”\n");
+	printf("ID      åå‰           æ‰“ç‡    ãƒ›ãƒ¼ãƒ ãƒ©ãƒ³æ•° ç›—å¡æ•°\n");
 	for (int i = 0; i < studentnum; i++) {
 		printf("%3d %15s %4f %10d %10d\n", class1[i].ID, class1[i].name, class1[i].BA, class1[i].HR, class1[i].SB);
 	}
