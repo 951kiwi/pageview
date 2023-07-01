@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+/* n : r = 1 : pi/4 */
+double montecarlo(int n) {
+	int i, in;
+	double x, y;
+	for (i = 0, in = 0; i < n; i++) {
+		//rand() で生成される値の範囲は [0, 32767] と狭い。15ビット 0~1.0の乱数の発生
+		x = (double)rand() / (32767.0);
+		y = (double)rand() / (32767.0);
+		if ((x * x + y * y) < 1.0)//x>0, かつ, y>0より中心が(0,0)で半径1の円の第一象限部分に入るかどうかを判定している.
+			in++;
+	}
+	return (double)(4.0 * in) / n;
+}
+int main(void) {
+	printf("%1.5f\n", montecarlo(10));
+	printf("%1.5f\n", montecarlo(100));
+	printf("%1.5f\n", montecarlo(1000));
+	printf("%1.5f\n", montecarlo(10000));
+	printf("%1.5f\n", montecarlo(100000));
+	printf("%1.5f\n", montecarlo(1000000));
+	return 0;
+}

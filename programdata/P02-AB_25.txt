@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+	FILE* fp;
+	errno_t error;
+	error = fopen_s(&fp, "trigonofunc.txt", "w");
+	if (error != 0) {
+		printf("ファイルを開けませんでした");
+		exit(0);
+	}
+
+	int k, n;
+	double Sk, Ak;
+	printf("自然対数の底 e を計算します。\n");
+	printf("何項まで計算しますか ? ");
+	scanf_s("%d", &n);
+	/* k = 0 のとき */
+	Ak = 1.0;
+	Sk = Ak;
+	for (k = 1; k <= n; k++) {
+		Ak = Ak / k;
+		Sk = Sk + Ak;
+		printf("k=%3d, Ak=%e, Sk=%20.15e\n", k, Ak, Sk);
+		fprintf(fp, "k=%3d, Ak=%e, Sk=%20.15e\n", k, Ak, Sk);
+	}
+	return 0;
+}

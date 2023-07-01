@@ -1,0 +1,11 @@
+#define _USE_MATH_DEFINES//mathの前に定義 
+#include <math.h>
+#include <stdio.h>
+int main(void)
+{
+	printf("M_PI=%.4f\n", M_PI);
+	printf("M_PI=%f\n", M_PI);
+	printf("M_PI=%.10f\n", M_PI);
+	printf("M_PI=%.15f\n", M_PI);
+	return 0;
+}
