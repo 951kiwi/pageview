@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+
+int main(void) {
+	int a;		//データ保管庫
+	int next;	//データ保管庫
+	int w;		//余り
+	int data = 0;//結果
+	int bay = 1; //桁数
+	
+	scanf("%d", &next);
+	while (next != 0) {
+		a = next;
+		next = next / 2;
+		w = a % 2;
+		
+		data+=(w*bay);
+
+		bay = bay * 10;
+	}
+	printf("%d",data);
+}
