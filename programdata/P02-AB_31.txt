@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define H 0.02
+/* vを微分した関数*/
+double f(double x, double v, double t);
+double g(double x, double v, double t);
+int main()
+{
+	/*x, v, tの初期値*/
+	double t = 0.0;
+	double v = 0.0;
+	double x = 0.0;
+	double k1[2], k2[2], k3[2], k4[2];
+
+	FILE* fp;
+	errno_t error;
+	error = fopen_s(&fp, "freefall.txt", "w");
+	if (error != 0) {
+		printf("ファイルを開けませんでした");
+		exit(0);
+	}
+
+	while (t < 10) {
+
+		k1[0] = g(x, v, t);
+		k1[1] = f(x, v, t);
+		k2[0] = g(x + H * (k1[0] / 2), v + H * (k1[1] / 2), t + (H / 2));
+		k2[1] = f(x + H * (k1[0] / 2), v + H * (k1[1] / 2), t + (H / 2));
+		k3[0] = g(x + H * (k2[0] / 2), v + H * (k2[1] / 2), t + (H / 2));
+		k3[1] = f(x + H * (k2[0] / 2), v + H * (k2[1] / 2), t + (H / 2));
+		k4[0] = g(x + H * k3[0], v + H * k3[1], t + H);
+		k4[1] = f(x + H * k3[0], v + H * k3[1], t + H);
+		x = x + (1.0 / 6.0) * (k1[0] + 2 * k2[0] + 2 * k3[0] + k4[0]) * H;
+			v = v + (1.0 / 6.0) * (k1[1] + 2 * k2[1] + 2 * k3[1] + k4[1]) * H;
+			t = t + H; 
+		printf("t=%lf x=%lf\n", t, x);
+		fprintf(fp, "%5.7e\t%5.7e\n", t, x);
+	}
+	fclose(fp);
+	return(0);
+}
+/*mainは終わり*/
+double g(double x, double v, double t) {
+	return v;
+}
+double f(double x, double v, double t) {
+	return -9.8;
+}

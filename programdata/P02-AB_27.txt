@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define H 0.02
+
+int main()
+{
+	/*x, v, tの初期値*/
+	double t = 0.0;
+	double v = 0.0;
+	double x = 0.0;
+	FILE* fp;
+	errno_t error;
+	error = fopen_s(&fp, "freefall.txt", "w");
+	if (error != 0) {
+		printf("ファイルを開けませんでした");
+		exit(0);
+	}
+	while (t < 10) {
+
+		x = x + v * H; // x(n+1)=x(n)+(dx/dt)*h, dx/dt=g(x,v, t)
+		v = v + (9.8) * H; //v(n+1)=v(n)+f(x,v,t)*h
+		printf("t=%lf x=%lf\n", t, x);
+		fprintf(fp, "%5.7e\t%5.7e\n", t, x);
+		t = t + H; //時刻を幅H更新
+	}
+	fclose(fp);
+	return(0);
+}

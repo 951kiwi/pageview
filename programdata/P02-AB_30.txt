@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define H 0.02
+double f(double x, double t);
+int main()
+{
+	/*x, tの初期値*/
+	double t = 1.0;
+	double x = 1.0;
+	FILE* fp;
+	errno_t error;
+	error = fopen_s(&fp, "tsquare.txt", "w");
+	if (error != 0) {
+		printf("ファイルを開けませんでした");
+		exit(0);
+	}
+	while (t < 10.0) {
+
+		double k1 = f(x, t);
+		double k2 = f(x + H * (k1 / 2.0), t + (H / 2.0));
+		double k3 = f(x + H * (k2 / 2.0), t + (H / 2.0));
+		double k4 = f(x + H * k3, t + H);
+		x = x + (1.0 / 6.0) * (k1 + 2.0 * k2 + 2.0 * k3 + k4) * H; 
+		/*ルンゲクッタ法終わり*/
+
+		t = t + H; //時刻を幅Hで更新
+		printf("t=%lf x=%lf\n", t, x);
+		fprintf(fp, "%5.7e\t%5.7e\n", t, x);
+	}
+	fclose(fp);
+	return(0);
+}
+
+double f(double x, double t) {
+	return 2.0;
+}
