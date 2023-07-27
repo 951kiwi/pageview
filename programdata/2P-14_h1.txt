@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+typedef struct list {
+	double num;
+	struct list* next;
+}; list;
+
+int main(void) {
+	list a, b, c;
+	list* p;
+
+	a.num = 1;
+	b.num = 2;
+	c.num = 3;
+
+	a.next = &b;
+	b.next = &c;
+	c.next = NULL;
+
+	for (p = &a; p != NULL; p = p->next) {
+		printf("%lf\n", p->num);
+	}
+
+	return 0;
+}

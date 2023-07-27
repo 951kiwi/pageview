@@ -1,0 +1,105 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+typedef struct list {
+    char name[20];
+    int num;
+    struct list* next;
+} list;
+
+int main(void) {
+    int member;
+    printf("登録人数は >>");
+    scanf("%d", &member);
+
+    list* p = NULL;
+    list* pstr = NULL;
+
+    for (int i = 0; i < member; i++) {
+        list* score = (list*)malloc(sizeof(list));
+        if (score == NULL) {
+            printf("メモリ割り当てエラー\n");
+            return 1;
+        }
+
+        printf("名前は?>");
+        scanf("%s", score->name); 
+        printf("点数は?>");
+        scanf("%d", &score->num); 
+        score->next = NULL;
+
+        if (pstr == NULL) { 
+            pstr = score;
+            p = pstr;
+        }
+        else {
+            p->next = score;
+            p = p->next;
+        }
+    }
+
+    p = pstr; 
+
+    for (int i = 0; i < member; i++) {
+        printf("名前は>%s\n", p->name);
+        printf("点数は>%d\n", p->num);
+        p = p->next;
+    }
+
+    int flag; // 1で検索 0でbreak while
+    int suc;  // 1で条件あり 0で条件なし strcmp
+    int num;  // 何番に入れるかを記憶
+    // 代入
+    while (1) {
+        printf("データを追加しますか？(Y:1, N:0) : ");
+        flag = 0;
+        scanf("%d", &flag);
+        if (flag == 1) {
+            list* new_score = (list*)malloc(sizeof(list));
+            printf("どこにデータを代入します？ > ");
+            scanf("%d", &num);
+            member++; // 登場人物の合計を合算
+
+            printf("名前は?>");
+            scanf("%s", new_score->name);
+            printf("点数は?>");
+            scanf("%d", &new_score->num);
+            new_score->next = NULL;
+
+            if (num == 0) {
+                new_score->next = pstr;
+                pstr = new_score;
+            }
+            else {
+                p = pstr;
+                for (int i = 0; i < num - 1; i++) {
+                    p = p->next;
+                }
+                new_score->next = p->next;
+                p->next = new_score;
+            }
+        }
+        else {
+            break;
+        }
+
+        p = pstr; 
+
+        for (int i = 0; i < member; i++) {
+            printf("名前は>%s\n", p->name);
+            printf("点数は>%d\n", p->num);
+            p = p->next;
+        }
+    }
+
+    /* メモリ解放 */
+    p = pstr;
+    while (p != NULL) {
+        pstr = p->next;
+        free(p);
+        p = pstr;
+    }
+
+    return 0;
+}

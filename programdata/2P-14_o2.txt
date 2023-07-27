@@ -1,0 +1,101 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+typedef struct list {
+    char name[20];
+    int num;
+    struct list* next;
+} list;
+
+int main(void) {
+    int member;
+    printf("登録人数は >>");
+    scanf("%d", &member);
+
+    list* p = NULL;
+    list* pstr = NULL;
+
+    for (int i = 0; i < member; i++) {
+        list* score = (list*)malloc(sizeof(list));
+        if (score == NULL) {
+            printf("メモリ割り当てエラー\n");
+            return 1;
+        }
+
+        printf("名前は?>");
+        scanf("%s", score->name);
+        printf("点数は?>");
+        scanf("%d", &score->num);
+        score->next = NULL;
+
+        if (pstr == NULL) {
+            pstr = score;
+            p = pstr;
+        }
+        else {
+            p->next = score;
+            p = p->next;
+        }
+    }
+
+    p = pstr;
+
+    for (int i = 0; i < member; i++) {
+        printf("名前は>%s\n", p->name);
+        printf("点数は>%d\n", p->num);
+        p = p->next;
+    }
+
+    int flag; // 1で検索 0でbreak while
+    int suc;  // 1で条件あり 0で条件なし strcmp
+    int num;  // 何番消すかを記憶
+    list* temp;
+
+    // 削除
+    while (1) {
+        printf("データを削除しますか？(Y:1, N:0) : ");
+        flag = 0;
+        scanf("%d", &flag);
+        if (flag == 1) {
+            printf("どこのデータを削除します？ > ");
+            scanf("%d", &num);
+            if (num == 1) {
+                temp = pstr;
+                pstr = pstr->next;
+                free(temp);
+            }
+            else {
+                p = pstr;
+                for (int i = 0; i < num - 2; i++) { 
+                    p = p->next;
+                }
+                temp = p->next;
+                p->next = p->next->next;//二重next参照
+                free(temp);
+            }
+            member--; // 登場人物の合計を引算
+        }
+        else {
+            break;
+        }
+
+        p = pstr;
+
+        for (int i = 0; i < member; i++) {
+            printf("名前は>%s\n", p->name);
+            printf("点数は>%d\n", p->num);
+            p = p->next;
+        }
+    }
+
+    /* メモリ解放 */
+    p = pstr;
+    while (p != NULL) {
+        pstr = p->next;
+        free(p);
+        p = pstr;
+    }
+
+    return 0;
+}
